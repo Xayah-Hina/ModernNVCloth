@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.24)
 project(ModernNVCloth VERSION 1.0.0 DESCRIPTION "Proceed to Modern NV Cloth" LANGUAGES CXX)
 
-add_executable(ModernNVCloth)
-set_target_properties(ModernNVCloth PROPERTIES CXX_STANDARD 20 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
-target_sources(ModernNVCloth
+add_library(NVCloth STATIC)
+set_target_properties(NVCloth PROPERTIES CXX_STANDARD 20 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
+target_sources(NVCloth
         PRIVATE
-        main.cpp
-
         include/NvCloth/Allocator.h
         include/NvCloth/Callbacks.h
         include/NvCloth/Cloth.h
@@ -109,12 +107,12 @@ target_sources(ModernNVCloth
         src/NvCloth/ps/windows/PsWindowsInclude.h
         )
 set_source_files_properties(src/NvCloth/avx/SwSolveConstraints.cpp PROPERTIES COMPILE_FLAGS "/arch:AVX")
-target_include_directories(ModernNVCloth
+target_include_directories(NVCloth
         PUBLIC
         include
         src/NvCloth
         )
-target_compile_definitions(ModernNVCloth
+target_compile_definitions(NVCloth
         PUBLIC
         NV_CLOTH_ENABLE_DX11=0
         NV_CLOTH_ENABLE_CUDA=0
