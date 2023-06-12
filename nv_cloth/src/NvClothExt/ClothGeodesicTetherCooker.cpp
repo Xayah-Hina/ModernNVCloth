@@ -33,7 +33,7 @@
 #include "NvClothExt/ClothTetherCooker.h"
 
 // from shared foundation
-#include "../../src/ps/PsSort.h"
+#include "ps/PsSort.h"
 #include "NvCloth/ps/PsMathUtils.h"
 #include "NvCloth/Allocator.h"
 

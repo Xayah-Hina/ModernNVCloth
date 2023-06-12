@@ -32,7 +32,7 @@
 #include "ps/PsSort.h"
 #include "limits.h" // for USHRT_MAX
 #include <algorithm>
-#include "../../src/ps/PsUtilities.h"
+#include "ps/PsUtilities.h"
 
 using namespace nv;
 using namespace physx;
